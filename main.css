@@ -1,0 +1,7 @@
+.col-sm-4.dark {
+    background: red !important
+}
+
+.col-sm-4.default{
+    background: none;
+}
