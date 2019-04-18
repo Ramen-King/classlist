@@ -1,7 +1,7 @@
 .col-sm-4.dark {
-    background: red !important
+    background: rgb(56, 54, 54) 
 }
 
-.col-sm-4.default{
-    background: none;
+.col-sm-4.green {
+    background: green   
 }

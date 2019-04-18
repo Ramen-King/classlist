@@ -1,20 +1,31 @@
 window.onload = init;
 
 function init() {
-  const checkBox = document.querySelectorAll("input");
-  for (let i = 0; i < checkBox.length; i++) {
-    checkBox[i].addEventListener("click", toggleTheme);
-    console.log(checkBox[i].checked);
-  }
+  const checkBoxes = Array.from(document.querySelectorAll("input"));
+    console.log(checkBoxes)
+  checkBoxes.forEach(target => {
+    target.addEventListener("change", toggleTheme);
+  });
 }
 
 function toggleTheme(event) {
   event.preventDefault();
-  //const unChecked = [];
-  const checkBox = document.querySelectorAll("input");
-  for (let i = 0; i < checkBox.length; i++) {
-  if(checkBox[i].checked){  
+  const parent = this.parentNode;
+  parent.classList.toggle("dark");
 
-  }
-  }
+  const checkBoxes = Array.from(document.querySelectorAll("input"));
+  const allChecked = checkBoxes.every((checkbox) => checkbox.checked);
+  const allParents = Array.from(document.querySelectorAll('.col-sm-4'));
+    if(allChecked){
+        allParents.forEach(input => {
+            input.classList.add('green')
+        })
+        
+    }else{
+        allParents.forEach(input => {
+            input.classList.remove('green')
+        })
+    }
+
 }
+
